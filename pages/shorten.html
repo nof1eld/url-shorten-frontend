@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorten</title>
+    <link rel="icon" href="/Assets/shorten-icon.svg">
+    <script src="../js/Auth/private.js"></script>
+    <link rel="stylesheet" href="/styles/shorten.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="/Assets/shorten-icon.svg" alt="Logo">
+            <h1>horten</h1>
+        </div>
+        <div id="profile-button"></div>
+    </nav>
+    
+    <div id="profile-card" class="hide">
+        <div class="info">
+            <img src="/Assets/profile-icon.svg" alt="Profile">
+            <div class="info__details">
+                <p id="profile-username">Username: </p>
+                <p id="profile-email">Email: </p>
+                <p id="profile-date-created">Date Created: </p>
+            </div>
+        </div>
+        
+        <a id="logout-button" href="/pages/logout.html">Logout <img src="/Assets/logout-icon.svg" alt="Logout"></a>
+    </div>
+
+    <div class="container">
+        <h1>Create a shortcut for your URL</h1>
+        <form id="shorten-form" method="post">
+            <div class="input-group">
+                <select id="protocol-input">
+                    <option value="https://">https://</option>
+                    <option value="http://">http://</option>
+                </select>
+                <input name="url" placeholder="example.com" required>
+            </div>
+            <button type="submit"><img src="/Assets/feature1-icon.svg" alt="Shorten">Shorten</button>
+        </form>
+        <div id="shorten-result"></div>
+    </div>
+    
+    <div id="modify-url-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Modify URL</h2>
+            <div class="input-group">
+                <select id="protocol-input">
+                    <option value="https://">https://</option>
+                    <option value="http://">http://</option>
+                </select>
+                <input type="text" id="new-url-input" placeholder="example.com" />
+            </div>
+            <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
+                <button id="cancel-url-btn">Cancel</button>
+                <button id="save-url-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="short-urls-container">
+        <h1>Your shortened URLs</h1>
+        <div id="shorten-list"></div>
+    </div>
+    <div class="pagination">
+        <button id="prev-btn" onclick="getShortUrls('prev')">Previous</button>
+        <span id="current-page">1</span> of <span id="total-pages">1</span>
+        <button id="next-btn" onclick="getShortUrls('next')">Next</button>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="/Assets/shorten-icon.svg" alt="Logo">
+                <h1>horten</h1>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.shorten-url-api.infobrains.club/api-docs/" target="_blank">API Docs</a>
+                <a href="https://github.com/nof1eld" target="_blank">About</a>
+                <a href="https://github.com/nof1eld" target="_blank">Contact</a>
+                <a href="https://github.com/nof1eld" target="_blank">Privacy Policy</a>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/nof1eld" target="_blank"><img src="/Assets/github-icon.svg" alt="Github" title="Author"></a>
+            </div>
+        </div>
+    </footer>
+   
+    <script src="../js/Utilities/user.js"></script>
+    <script src="../js/Utilities/popup.js"></script>
+    <script src="../js/Url/createShortUrl.js"></script>
+    <script src="../js/Url/getShortUrls.js"></script>
+    <script src="../js/Url/copyShortUrl.js"></script>
+    <script src="../js/Url/deleteShortUrl.js"></script>
+    <script src="../js/Url/modifyShortUrl.js"></script>
+</body>
+</html>
+

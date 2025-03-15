@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Assets/shorten-icon.svg">
+    <title>Shorten - welcome</title>
+    <script src="./js/public.js"></script>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/shorten.css">
+</head>
+<body>
+    <nav>
+        <a href="/index.html" class="logo">
+            <img src="/Assets/shorten-icon.svg" alt="Logo">
+            <h1>horten</h1>
+        </a>
+        <div class="button-container">
+            <button class="action-button" id="register" onclick="showPopup('register-popup')">Sign Up</button>
+            <button class="action-button" id="login" onclick="showPopup('login-popup')">Login</button>
+        </div>
+    </nav>
+    <div class="description">
+        <h1>Shorten your Links</h1>
+        <p>Create short, memorable links in seconds</p>
+    </div>
+
+    <div class="container" id="shorten-container">
+        <form id="shorten-form" >
+            <div class="input-group">
+                <select id="protocol-input">
+                    <option value="https://">https://</option>
+                    <option value="http://">http://</option>
+                </select>
+                <input name="url" placeholder="example.com">
+            </div>
+            <button onclick="showPopup('register-popup')"><img src="/Assets/feature1-icon.svg" alt="Shorten">Shorten</button>
+        </form>
+        <div id="shorten-result"></div>
+    </div>
+    <script>
+        document.getElementById('shorten-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <h1>Your shortened Links</h1>
+
+
+
+
+    <div class="container">
+            <li>
+                <div class="shorten-url">
+                    <div class="shorten-url__urls">
+                <div class="shorten-url__short-url">
+                    <p><strong>Shortened:</strong> </p>
+                    <a href="https://github.com/nof1eld" target="_blank" rel="noopener noreferrer">
+                            shorten-url-api.infobrains.club/shorten/
+                            <img id="external-link-icon" src="../../Assets/external-link-icon.svg" alt="External link" title="Open in new tab">
+                    </a>
+                </div>
+                <div class="shorten-url__original-url">
+                    <strong>Original:</strong> 
+                    <a href="https://github.com/nof1eld" target="_blank"><img src="https://www.google.com/s2/favicons?domain=github.com" alt="favicon" /></a>
+                </div> 
+            </div>
+                <div class="shorten-url__details">
+                    <div class="shorten-url__clicks">
+                        <p><strong>Clicks:</strong> 5</p>
+                    </div>
+                    <div class="shorten-url__created-at">
+                        <p><strong>Date Created:</strong> 3/14/2025, 6:36:09 PM</p>
+                    </div>
+                    <div class="shorten-url__updated-at">
+                        <p><strong>Date Updated:</strong> 3/15/2025, 6:10:12 PM</p>
+                    </div>
+                </div>
+                </div>
+            
+                <div class="shorten-url_actions">
+                    <button id="copy" url-id="${shortUrl.shortUrl}" onclick="copyShortUrl(event)"><img src="../../Assets/copy-icon.svg" alt="Copy" title="Copy to clipboard"></button>
+                    <button id="modify" url-id="${shortUrl.id}" onclick="modifyShortUrl(event)"><img src="../../Assets/edit-icon.svg" alt="Edit" title="Edit Url"></button>
+                    <button id="delete" url-id="${shortUrl.id}" onclick="deleteShortUrl(event)"><img src="../../Assets/delete-icon.png" alt="Delete" title="Delete Url"></button>
+                </div>
+            </li>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <img src="/Assets/feature1-icon.svg" alt="Feature 1">
+            <h2>Shorten Links</h2>
+            <p>Create short links instantly</p>
+        </div>
+        <div class="feature">
+            <img src="/Assets/feature3-icon.svg" alt="Feature 3">
+            <h2>Track history</h2>
+            <p>Track clicks and link updates</p>
+        </div>
+        <div class="feature">
+            <img src="/Assets/feature2-icon.svg" alt="Feature 2">
+            <h2>100% Free</h2>
+            <p>No fees needed</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup auth-popup" id="register-popup">
+        <div class="popup-header">
+            <h1>Create a new account</h1>
+            <p>Join us to start shortening your links</p>
+        </div>
+        <form id="register-form" method="post">
+            <div class="form-group">
+                <label for="register-name">Name</label>
+                <div class="input-with-icon">
+                    <input type="text" id="register-name" name="name" placeholder="Your name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="register-email">Email</label>
+                <div class="input-with-icon">
+                    <input type="email" id="register-email" name="email" placeholder="Your email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="register-password">Password</label>
+                <div class="input-with-icon">
+                    <input type="password" id="register-password" name="password" placeholder="Create a password" required>
+                </div>
+            </div>
+            <button type="submit" class="auth-button">Register</button>
+        </form>
+        <div class="auth-footer">
+            <p>Already registered? <button id="already-registered" class="text-button">Login</button></p>
+        </div>
+    </div>
+
+    <div class="popup auth-popup" id="login-popup">
+        <div class="popup-header">
+            <h1>Welcome back</h1>
+            <p>Login to manage your shortened links</p>
+        </div>
+        <form id="login-form" method="post">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <div class="input-with-icon">
+                    <input type="email" id="login-email" name="email" placeholder="Your email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <div class="input-with-icon">
+                    <input type="password" id="login-password" name="password" placeholder="Your password" required>
+                </div>
+            </div>
+            <button type="submit" class="auth-button">Login</button>
+        </form>
+        <div class="auth-footer">
+            <p>Not registered? <button id="not-registered" class="text-button">Sign Up</button></p>
+        </div>
+    </div>
+
+     <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="/Assets/shorten-icon.svg" alt="Logo">
+                <h1>horten</h1>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.shorten-url-api.infobrains.club/api-docs/" target="_blank">API Docs</a>
+                <a href="https://github.com/nof1eld" target="_blank">About</a>
+                <a href="https://github.com/nof1eld" target="_blank">Contact</a>
+                <a href="https://github.com/nof1eld" target="_blank">Privacy Policy</a>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/nof1eld" target="_blank"><img src="/Assets/github-icon.svg" alt="Github" title="Author"></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/Utilities/popup.js"></script>
+    <script src="./js/Auth/register.js"></script>
+    <script src="./js/Auth/login.js"></script>
+
+</body>
+</html>
+
