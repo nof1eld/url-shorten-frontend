@@ -48,7 +48,7 @@ nav {
   align-items: flex-start;
   text-decoration: none;
   color: var(--black);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .logo img {
@@ -250,7 +250,7 @@ footer img {
 
 .form-group input {
   width: 100%;
-  padding: 12px 12px 12px 12px;
+  padding: 12px;
   border: 1px solid var(--gray-medium);
   border-radius: 6px;
   font-size: 0.95rem;
@@ -291,7 +291,7 @@ footer img {
 .text-button {
   background: none;
   border: none;
-  color: var(--blue);
+  color: var(--info);
   cursor: pointer;
   font-weight: 600;
   padding: 0;
@@ -301,3 +301,63 @@ footer img {
 .text-button:hover {
   text-decoration: underline;
 }
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.primary-button {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.secondary-button {
+  background-color: var(--gray-light);
+  color: var(--black);
+  border: 1px solid var(--gray-medium);
+}
+
+.primary-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.secondary-button:hover {
+  background-color: var(--gray-medium);
+  transform: translateY(-2px);
+}
+
+.protocol-input-wrapper {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.protocol-input-wrapper select {
+  border-radius: 6px 0 0 6px;
+  border: 1px solid var(--gray-medium);
+  background-color: var(--gray-light);
+  padding: 12px;
+  font-size: 0.95rem;
+}
+
+.protocol-input-wrapper input {
+  border-radius: 0 6px 6px 0;
+  flex: 1;
+  padding-left: 12px;
+}
+

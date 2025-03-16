@@ -1,8 +1,8 @@
 const shortenForm = document.getElementById("shorten-form")
 const shortenResult = document.getElementById("shorten-result")
+const shortenBtn = document.getElementById("shorten-btn")
 
-shortenForm.addEventListener("submit", async (e) => {
-  e.preventDefault()
+shortenBtn.addEventListener("click", async () => {
   const protocol = shortenForm.querySelector("#protocol-input").value
   const urlInput = shortenForm.querySelector('input[name="url"]').value
 
@@ -45,7 +45,7 @@ shortenForm.addEventListener("submit", async (e) => {
       alert(jsonResponse.error.details)
     } else if (response.status === 201) {
       const shortUrl = jsonResponse.data.shortUrl
-      shortenResult.innerHTML = `<a href="${shortUrl}" target="_blank">${shortUrl}</a>`
+      shortenResult.innerHTML = `<p>Short URL: <a href="${shortUrl}" target="_blank">${shortUrl}</a></p>`
       getShortUrls()
     }
   } catch (error) {
@@ -53,4 +53,3 @@ shortenForm.addEventListener("submit", async (e) => {
     alert("Failed to create short URL")
   }
 })
-

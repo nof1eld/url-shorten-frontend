@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shorten</title>
-    <link rel="icon" href="/Assets/shorten-icon.svg">
+    <link rel="icon" href="/Assets/shorten-icon.png">
     <script src="../js/Auth/private.js"></script>
     <link rel="stylesheet" href="/styles/shorten.css">
     <link rel="stylesheet" href="/styles/index.css">
@@ -12,10 +12,9 @@
 </head>
 <body>
     <nav>
-        <div class="logo">
-            <img src="/Assets/shorten-icon.svg" alt="Logo">
-            <h1>horten</h1>
-        </div>
+        <a href="/index.html" class="logo">
+            <h1>Shorten</h1>
+        </a>
         <div id="profile-button"></div>
     </nav>
     
@@ -32,7 +31,7 @@
         <a id="logout-button" href="/pages/logout.html">Logout <img src="/Assets/logout-icon.svg" alt="Logout"></a>
     </div>
 
-    <div class="container">
+    <div class="container" id="shorten-container">
         <h1>Create a shortcut for your URL</h1>
         <form id="shorten-form" method="post">
             <div class="input-group">
@@ -42,26 +41,37 @@
                 </select>
                 <input name="url" placeholder="example.com" required>
             </div>
-            <button type="submit"><img src="/Assets/feature1-icon.svg" alt="Shorten">Shorten</button>
+            <button type="button" id="shorten-btn"><img src="/Assets/feature1-icon.svg" alt="Shorten">Shorten</button>
+            <button type="button" id="unshorten-btn"><img src="/Assets/unshorten-icon.svg" alt="Unshorten">Unshorten</button>
         </form>
-        <div id="shorten-result"></div>
+        
     </div>
-    
+    <div id="shorten-result"></div>
     <div id="modify-url-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content auth-popup">
             <span class="close">×</span>
-            <h2>Modify URL</h2>
-            <div class="input-group">
-                <select id="protocol-input">
-                    <option value="https://">https://</option>
-                    <option value="http://">http://</option>
-                </select>
-                <input type="text" id="new-url-input" placeholder="example.com" />
+            <div class="popup-header">
+                <h1>Modify URL</h1>
+                <p>Update your shortened link destination</p>
             </div>
-            <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
-                <button id="cancel-url-btn">Cancel</button>
-                <button id="save-url-btn">Save Changes</button>
-            </div>
+            <form id="modify-url-form">
+                <div class="form-group">
+                    <label for="new-url-input">Destination URL</label>
+                    <div class="input-group">
+                        <div class="protocol-input-wrapper">
+                            <select id="protocol-input-modal">
+                                <option value="https://">https://</option>
+                                <option value="http://">http://</option>
+                            </select>
+                            <input type="text" id="new-url-input" placeholder="example.com" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-url-btn" class="secondary-button">Cancel</button>
+                    <button type="button" id="save-url-btn" class="primary-button">Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -77,10 +87,9 @@
 
     <footer>
         <div class="footer-content">
-            <div class="logo">
-                <img src="/Assets/shorten-icon.svg" alt="Logo">
-                <h1>horten</h1>
-            </div>
+            <a href="/index.html" class="logo">
+                <h1>Shorten</h1>
+            </a>
             <div class="footer-links">
                 <a href="https://www.shorten-url-api.infobrains.club/api-docs/" target="_blank">API Docs</a>
                 <a href="https://github.com/nof1eld" target="_blank">About</a>
@@ -100,6 +109,7 @@
     <script src="../js/Url/copyShortUrl.js"></script>
     <script src="../js/Url/deleteShortUrl.js"></script>
     <script src="../js/Url/modifyShortUrl.js"></script>
+    <script src="../js/Url/unShortenUrl.js"></script>
 </body>
 </html>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/Assets/shorten-icon.svg">
+    <link rel="icon" href="/Assets/shorten-icon.png">
     <title>Shorten - welcome</title>
     <script src="./js/public.js"></script>
     <link rel="stylesheet" href="/styles/index.css">
@@ -12,8 +12,7 @@
 <body>
     <nav>
         <a href="/index.html" class="logo">
-            <img src="/Assets/shorten-icon.svg" alt="Logo">
-            <h1>horten</h1>
+            <h1>Shorten</h1>
         </a>
         <div class="button-container">
             <button class="action-button" id="register" onclick="showPopup('register-popup')">Sign Up</button>
@@ -33,10 +32,11 @@
                     <option value="http://">http://</option>
                 </select>
                 <input name="url" placeholder="example.com">
-            </div>
+            </div> 
             <button onclick="showPopup('register-popup')"><img src="/Assets/feature1-icon.svg" alt="Shorten">Shorten</button>
+            <button onclick="showPopup('register-popup')"><img src="/Assets/unshorten-icon.svg" alt="Unshorten">Unshorten</button>
+        
         </form>
-        <div id="shorten-result"></div>
     </div>
     <script>
         document.getElementById('shorten-form').addEventListener('submit', function(event) {
@@ -163,10 +163,9 @@
 
      <footer>
         <div class="footer-content">
-            <div class="logo">
-                <img src="/Assets/shorten-icon.svg" alt="Logo">
-                <h1>horten</h1>
-            </div>
+            <a href="/index.html" class="logo">
+                <h1>Shorten</h1>
+            </a>
             <div class="footer-links">
                 <a href="https://www.shorten-url-api.infobrains.club/api-docs/" target="_blank">API Docs</a>
                 <a href="https://github.com/nof1eld" target="_blank">About</a>
