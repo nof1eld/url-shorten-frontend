@@ -193,7 +193,7 @@ footer img {
 
 .footer-links a {
   text-decoration: none;
-  color: var (--black);
+  color: var(--black);
 }
 
 .footer-links a:hover {
