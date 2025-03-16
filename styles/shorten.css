@@ -182,13 +182,6 @@ form {
   gap: 15px;
 }
 
-#shorten-list a {
-  text-decoration: none;
-  color: var(--info);
-  display: flex;
-  align-items: center;
-}
-
 #shorten-list a:hover {
   text-decoration: underline;
 }
@@ -209,6 +202,12 @@ li {
 
 li:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.326);
+}
+li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #0091ff;
 }
 
 .shorten-url__details {
@@ -237,27 +236,28 @@ li:hover {
 }
 
 /* Buttons */
-.shorten-url_actions #copy,
-.shorten-url_actions #modify,
-.shorten-url_actions #delete {
+.shorten-url_actions {
+  display: flex;
+  gap: 3px;
+}
+.shorten-url_actions button {
+  background-color: var(--primary);
+  display: flex;
   align-items: center;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   padding: 5px;
 }
-
-.shorten-url_actions button {
-  background-color: var(--primary);
+#delete {
+  background-color: rgb(247, 91, 91);
 }
-
+#delete:hover {
+  background-color: rgb(245, 75, 75);
+}
 .shorten-url_actions button:hover {
   background-color: var(--primary-dark);
 }
-
-
-
-
 /* Modal */
 .modal {
   display: none;
@@ -298,13 +298,11 @@ li:hover {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  
 }
 
 #cancel-url-btn {
   background-color: var(--danger);
   color: var(--white);
-
 }
 
 #save-url-btn {
@@ -346,4 +344,3 @@ li:hover {
   opacity: 0.5;
   cursor: not-allowed;
 }
-

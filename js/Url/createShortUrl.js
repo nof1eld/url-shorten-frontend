@@ -11,7 +11,7 @@ shortenBtn.addEventListener("click", async () => {
     return
   }
 
-  const hasTLD = urlInput.match(/\.[a-z]{2,}$/i)
+  const hasTLD = urlInput.match(/\.[a-z]{2,}(\/|$)/i)
   if (!hasTLD) {
     alert("Please enter a valid URL with a domain extension (e.g. .com, .org, .net)")
     return
