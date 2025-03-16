@@ -45,8 +45,11 @@ shortenBtn.addEventListener("click", async () => {
       alert(jsonResponse.error.details)
     } else if (response.status === 201) {
       const shortUrl = jsonResponse.data.shortUrl
-      shortenResult.innerHTML = `<p>Short URL: <a href="${shortUrl}" target="_blank">${shortUrl}</a></p>`
-      getShortUrls()
+      shortenResult.innerHTML = `
+        <p>Short URL: <a href="${shortUrl}" target="_blank">${shortUrl}</a></p>
+        <button id="copy-button" url-id="${shortUrl}"><img src="/Assets/copy-icon.svg" alt="Copy">Copy</button>
+      `
+      document.getElementById("copy-button").addEventListener("click", copyShortUrl)
     }
   } catch (error) {
     console.error("Error creating short URL:", error)

@@ -25,7 +25,8 @@ button {
 #profile-button img,
 .shorten-url_actions img,
 #external-link-icon,
-#profile-card #logout-button img {
+#profile-card #logout-button img,
+#copy-button img {
   width: 20px;
   height: 20px;
 }
@@ -171,6 +172,10 @@ form {
 }
 
 #shorten-result {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  gap: 10px;
   font-size: 1.2rem;
   color: var(--gray-text);
 }
@@ -180,10 +185,6 @@ form {
   display: grid;
   list-style: none;
   gap: 15px;
-}
-
-#shorten-list a:hover {
-  text-decoration: underline;
 }
 
 li {
@@ -209,7 +210,9 @@ li a {
   align-items: center;
   color: #0091ff;
 }
-
+li a:hover {
+  text-decoration: underline;
+}
 .shorten-url__details {
   display: flex;
   align-items: center;
@@ -240,7 +243,7 @@ li a {
   display: flex;
   gap: 3px;
 }
-.shorten-url_actions button {
+.shorten-url_actions button, #copy-button {
   background-color: var(--primary);
   display: flex;
   align-items: center;
