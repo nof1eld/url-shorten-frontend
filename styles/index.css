@@ -44,8 +44,6 @@ nav {
 
 .logo {
   font-family: "Bigelow Rules", sans-serif;
-  display: flex;
-  align-items: flex-start;
   text-decoration: none;
   color: var(--black);
   font-size: 1.8rem;
@@ -195,7 +193,7 @@ footer img {
 
 .footer-links a {
   text-decoration: none;
-  color: var(--black);
+  color: var (--black);
 }
 
 .footer-links a:hover {
@@ -359,4 +357,78 @@ footer img {
   border-radius: 0 6px 6px 0;
   flex: 1;
   padding-left: 12px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 30px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+
+  .description h1 {
+    font-size: 2rem;
+  }
+
+  .description p {
+    font-size: 1rem;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .feature {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .description h1 {
+    font-size: 1.5rem;
+  }
+
+  .description p {
+    font-size: 0.9rem;
+  }
+
+  .feature {
+    width: 100%;
+  }
+
+  .footer-content {
+    gap: 10px;
+  }
+
+  .footer-links {
+    gap: 5px;
+  }
 }

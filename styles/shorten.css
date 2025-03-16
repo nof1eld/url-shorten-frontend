@@ -347,3 +347,51 @@ li a:hover {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  #shorten-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #shorten-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #shorten-form input[name="url"] {
+    border-radius: 8px;
+  }
+
+  #shorten-form button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #shorten-result {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  li {
+    align-items: flex-start;
+    gap: 10px;
+    height: 200px;
+  }
+
+  .shorten-url__details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .shorten-url_actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
