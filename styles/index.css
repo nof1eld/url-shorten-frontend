@@ -169,9 +169,13 @@ footer {
   justify-content: center;
   align-items: center;
   height: 120px;
-  margin-top: 60px;
-  padding: 10px 20px;
+  margin-top: 180px;
+  padding: 10px 0px;
   background-color: var(--background);
+}
+.footer-content {
+  display: flex;
+  gap: 350px;
 }
 
 footer img {
@@ -179,11 +183,9 @@ footer img {
   height: auto;
 }
 
-.footer-content {
-  display: flex;
-  gap: 350px;
+.footer-content .logo {
+  font-size: 1.2rem;
 }
-
 .footer-links {
   display: flex;
   justify-content: center;
